@@ -13,7 +13,7 @@
     --colorPrincipalTransparencia: rgba(250, 87, 58, 0.8);
     --colorSecundario: #21242e;
     --fontSize: 1rem;
-    --anchoMaximo: 1100px;
+    --anchoMaximo: 68.750rem;
     --marginGrid: 1rem;
 }
 
@@ -137,6 +137,7 @@ header .hamburguesa div {
     border-top: 2px solid #aaa;
     margin-bottom: 0.625rem;
 }
+
 
 header .menu {
     width: 100%;
@@ -334,25 +335,33 @@ main #ourservices article {
 }
 
 #aboutus figure {
-    margin: 1.250rem auto;
+    /*  margin: 1.250rem auto; */
+    transform: scale(0.95);
 }
 
 #aboutus figure .frame {
     border: 4px solid var(--colorPrincipal);
+
 }
 
-#aboutus div .frame {
-    transform: rotate(8deg);
+#aboutus figure .frame {
+    transform: rotatez(10deg);
+    transition: 1s;
 }
 
-#aboutus .frame img {
-    transform: rotate(-8deg);
+#aboutus figure .frame img {
+    transform: rotatez(-10deg);
+    transition: 1s;
+}
+
+#aboutus figure:hover :is(.frame, img) {
+    transform: rotate(0deg);
 }
 
 #aboutus h3 {
     font-weight: 700;
     font: 110%;
-    margin: 1.250rem 0;
+    margin: 1rem 0;
 }
 
 #aboutus h4 {
@@ -466,7 +475,7 @@ main #ourservices article {
     text-decoration: none;
     display: block;
     padding: var(--marginGrid);
-    margin: 3px 0;
+    margin: 0.188rem 0;
     text-align: left;
 }
 
@@ -487,7 +496,17 @@ main #ourservices article {
     padding: 0 1.250rem;
 }
 
+#menu p {
+    color: white;
+    margin-bottom: var(--marginGrid);
+    font-size: 90%;
+}
 
+#menu h3 {
+    font-weight: 700;
+    margin: 1.250rem 0;
+    color: white;
+}
 
 #menu article .underlinesimple hr {
     width: 10%;
@@ -499,10 +518,10 @@ main #ourservices article {
     margin-top: var(--marginGrid);
 }
 
-#menu h3 {
-    font-weight: 700;
-    margin: 1.250rem 0;
-    color: white;
+#menu .gridmenu .flexproductprice {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }
 
 #menu .gridmenu .flexproductprice p {
@@ -512,42 +531,21 @@ main #ourservices article {
 
 }
 
-#menu p {
-    color: white;
-    margin-bottom: var(--marginGrid);
-    font-size: 90%;
-}
-
 #menu .gridmenu {
     display: grid;
     padding: var(--marginGrid);
-    gap: 3rem;
-    margin-bottom: 3rem;
-}
-
-#menu .gridmenu .flexproductprice {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    /*     gap: 3rem; */
+    margin-bottom: 1.5rem;
 }
 
 #menu {
     margin-bottom: 3rem;
 }
 
-
-
-
+/* FIN MAIN MENU */
 
 
 /* fin main */
-
-
-
-
-
-
-
 
 /* mediaqueris */
 
@@ -573,7 +571,7 @@ main #ourservices article {
     }
 
     #aboutus .grid .history {
-        margin-left: 2.5rem;
+        margin-left: 1.5rem;
     }
 
 }
@@ -588,7 +586,7 @@ main #ourservices article {
 
     header .nav-top .container {
         justify-content: space-between;
-
+        padding: 0 1.250rem;
     }
 
     footer {
@@ -613,25 +611,42 @@ main #ourservices article {
         margin: 0;
     }
 
+    #menu article {
+        padding-left: 0 1.250rem;
+    }
+
     #menu .grid {
         grid-template-columns: 1fr 3fr;
-        gap: 100px;
+        gap: 3rem;
+        padding: 0 1.250rem;
     }
 
     #menu .grid .gridmenu {
         grid-template-columns: 1fr 2fr;
+        gap: 2rem;
         margin-top: 2rem;
-        align-items: flex-start;
+        justify-content: space-between
     }
-
 
     #menu .navmenu {
         padding-left: 0;
     }
 
-    #menu article {
-        padding-left: 0 1.250rem;
+    #menu .gridmenu .flexproductprice {
+        justify-content: space-between;
     }
+
+    #menu .gridmenu .flexproductprice h3 {
+        margin: 0 0 1rem 0;
+    }
+
+    #menu .gridmenu .flexproductprice p {
+        margin: 0;
+        /*       padding: var(--marginGrid); */
+
+    }
+
+
 
 
 
